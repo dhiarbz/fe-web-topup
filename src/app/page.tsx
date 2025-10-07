@@ -1,5 +1,4 @@
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
@@ -7,17 +6,15 @@ import GameCard from "@/components/GameCard";
 import Footer from "@/components/Footer";
 import { Flame } from "lucide-react";
 
-import gameML from "@/assets/game-ml.jpg";
-import gamePUBG from "@/assets/game-pubg.jpg";
-import gameFF from "@/assets/game-ff.jpg";
-import gameGenshin from "@/assets/game-genshin.jpg";
-import gameValorant from "@/assets/game-valorant.jpg";
-import gameCODM from "@/assets/game-codm.jpg";
+import gameML from "@/assets/ml.jpg";
+import gamePUBG from "@/assets/Pubg.webp";
+import gameFF from "@/assets/ff.webp";
+import gameGenshin from "@/assets/gi.webp";
+import gameValorant from "@/assets/valorant.webp";
+import gameCODM from "@/assets/cod.webp";
 
-const queryClient = new QueryClient();
-
-const App = () => {
-   const trendingGames = [
+const Home = () => {
+  const trendingGames = [
     { id: 1, title: "Mobile Legends", image: gameML, category: "MOBA", discount: "-20%" },
     { id: 2, title: "PUBG Mobile", image: gamePUBG, category: "Battle Royale" },
     { id: 3, title: "Free Fire", image: gameFF, category: "Battle Royale", discount: "-15%" },
@@ -107,4 +104,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
