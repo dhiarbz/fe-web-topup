@@ -16,7 +16,7 @@ interface GameCardProps {
 
 const GameCard = ({ title, image, category, discount, href = "#" }: GameCardProps) => {
     const cardContent = (
-        <Card className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer hover:shadow-lg">
+        <Card className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer hover:shadow-lg rounded-[8px]">
             <div className="relative aspect-[4/3] overflow-hidden">
                 <Image 
                     src={image} 
