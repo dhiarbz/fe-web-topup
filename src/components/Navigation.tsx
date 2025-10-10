@@ -26,18 +26,6 @@ const Navigation = () => {
             href: "/leaderboard",
             active: pathname === "/leaderboard"
         },
-        { 
-            icon: Newspaper, 
-            label: "Artikel", 
-            href: "/artikel",
-            active: pathname === "/artikel"
-        },
-        { 
-            icon: Calculator, 
-            label: "Kalkulator", 
-            href: "/kalkulator",
-            active: pathname === "/kalkulator"
-        },
     ];
 
     return (
