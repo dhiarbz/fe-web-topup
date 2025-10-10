@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -13,15 +16,15 @@
   --primary: hsl(162 70% 50%);
   --primary-foreground: hsl(210 40% 98%);
   --secondary: hsl(162 70% 50);
-  --secondary-foreground: hsl(222.2 47.4% 11.2%);
+  --secondary-foreground: hsl(0 0% 16%);
   --muted: hsl(0 0% 16%);
   --muted-foreground: hsl(0 0% 65%);
   --accent: hsl(162 70% 50%);
   --accent-foreground: hsl(0 0% 98%);
   --destructive: hsl(162 70% 50%);
   --destructive-foreground: hsl(210 40% 98%);
-  --border: hsl(0 0% 18%);
-  --input: hsl(0 0% 18%);
+  --border: hsl(0 0% 16%);
+  --input: hsl(0 0% 16%);
   --ring: hsl(162 70% 50%);
 
   /* Keep existing radius */
