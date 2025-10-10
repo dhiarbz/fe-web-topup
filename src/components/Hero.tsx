@@ -46,7 +46,7 @@ export default function HeroCarousel() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
 
   return (
-    <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-xl group border border-border">
+    <div className="relative w-full h-[260px] sm:h-[320px] md:h-[480px] lg:h-[520px] overflow-hidden rounded-xl group border border-border">
       <div
         className="flex h-full transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -63,11 +63,11 @@ export default function HeroCarousel() {
             />
             {/* Overlay gradient using theme tokens */}
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent flex items-end">
-              <div className="w-full p-6 md:p-8">
-                <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-2 text-pretty">{slide.title}</h2>
+              <div className="w-full p-4 sm:p-6 md:p-8">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 text-pretty">{slide.title}</h2>
                 <p className="text-sm md:text-lg text-muted-foreground">{slide.description}</p>
                 <Button
-                  className="mt-4 bg-[color:var(--chart-2)] text-[color:var(--background)] hover:opacity-90"
+                  className="mt-4 mb-4 rounded-xs bg-[color:var(--chart-2)] text-[color:var(--background)] hover:opacity-90"
                   size="lg"
                 >
                   Top Up Sekarang
@@ -82,7 +82,7 @@ export default function HeroCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute top-1/2 left-4 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm bg-background/20 hover:bg-background/40 text-foreground"
+        className="absolute top-1/2 left-3 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm bg-background/20 hover:bg-background/40 text-foreground h-9 w-9 md:h-10 md:w-10"
         onClick={prevSlide}
         aria-label="Sebelumnya"
       >
@@ -92,7 +92,7 @@ export default function HeroCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute top-1/2 right-4 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm bg-background/20 hover:bg-background/40 text-foreground"
+        className="absolute top-1/2 right-3 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm bg-background/20 hover:bg-background/40 text-foreground h-9 w-9 md:h-10 md:w-10"
         onClick={nextSlide}
         aria-label="Berikutnya"
       >
