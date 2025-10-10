@@ -1,6 +1,6 @@
 "use client";
 
-import { Flame, Receipt, Trophy, Newspaper, Calculator } from "lucide-react";
+import { Flame, Receipt, Trophy, Ticket } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -19,6 +19,12 @@ const Navigation = () => {
             label: "Cek Transaksi", 
             href: "/cek-transaksi",
             active: pathname === "/cek-transaksi"
+        },
+        { 
+            icon: Ticket, 
+            label: "Voucher", 
+            href: "/voucher",
+            active: pathname === "/voucher"
         },
         { 
             icon: Trophy, 
