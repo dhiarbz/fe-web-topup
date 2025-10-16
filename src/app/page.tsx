@@ -18,12 +18,12 @@ import gameCODM from "@/assets/cod.webp";
 
 const Home = () => {
   const trendingGames = [
-    { id: 1, title: "Mobile Legends", image: gameML, category: "MOBA", discount: "-20%" },
-    { id: 2, title: "PUBG Mobile", image: gamePUBG, category: "Battle Royale" },
-    { id: 3, title: "Free Fire", image: gameFF, category: "Battle Royale", discount: "-15%" },
-    { id: 4, title: "Genshin Impact", image: gameGenshin, category: "RPG" },
-    { id: 5, title: "Valorant", image: gameValorant, category: "FPS" },
-    { id: 6, title: "Call of Duty Mobile", image: gameCODM, category: "FPS", discount: "-10%" },
+    { id: 1, title: "Mobile Legends", image: gameML, category: "MOBA", discount: "-20%" , slug:"cek-transaksi"},
+    { id: 2, title: "PUBG Mobile", image: gamePUBG, category: "Battle Royale", slug:"#" },
+    { id: 3, title: "Free Fire", image: gameFF, category: "Battle Royale", discount: "-15%", slug:"#" },
+    { id: 4, title: "Genshin Impact", image: gameGenshin, category: "RPG" , slug:"#"},
+    { id: 5, title: "Valorant", image: gameValorant, category: "FPS" , slug:"#"},
+    { id: 6, title: "Call of Duty Mobile", image: gameCODM, category: "FPS", discount: "-10%", slug:"#" },
   ];
 
   return (
@@ -55,6 +55,7 @@ const Home = () => {
                 image={game.image}
                 category={game.category}
                 discount={game.discount}
+                href={'/game/{game.slug}'}
               />
             ))}
           </div>
@@ -71,6 +72,7 @@ const Home = () => {
                 title={game.title}
                 image={game.image}
                 category={game.category}
+                href={'/game/{game.slug}'}
               />
             ))}
           </div>
