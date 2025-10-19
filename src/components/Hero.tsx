@@ -69,6 +69,7 @@ export default function HeroCarousel() {
                 <Button
                   className="mt-4 mb-4 rounded-xs bg-[color:var(--chart-2)] text-[color:var(--background)] hover:opacity-90"
                   size="lg"
+                  
                 >
                   Top Up Sekarang
                 </Button>

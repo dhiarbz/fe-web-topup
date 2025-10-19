@@ -1,5 +1,6 @@
 import Header from "@/components/Header"
 import Navigation from "@/components/Navigation"
+import Footer from "@/components/Footer"
 import Image from "next/image"
 import Link from "next/link"
 import {Button} from "@/components/ui/button"
@@ -27,9 +28,9 @@ const GAMES: Record<string, Gameinfo> = {
         description: "Top up Diamonds Free Fire cepat dan resmi. Masukkan Player ID, pilih nominal, dan selesaikan pembayaran.",
         image: ff
     },
-    "mobile-legend": {
+    "mobile-legends": {
         name: "Mobile Legends",
-        slug: "mobile-legend",
+        slug: "mobile-legends",
         description: "Top up Diamonds Mobile legends cepat dan resmi. Masukkan Player ID, pilih nominal, dan selesaikan pembayaran.",
         image: ml
     },
@@ -45,15 +46,15 @@ const GAMES: Record<string, Gameinfo> = {
         description: "Isi Genesis Crystals & Blessing of the Welkin Moon dengan mudah. Pastikan UID Anda benar sebelum checkout.",
         image: gi
     },
-    "pubg": {
-        name: "PUBG",
-        slug: "pubg",
+    "pubg-mobile": {
+        name: "PUBG Mobile",
+        slug: "pubg-mobile",
         description: "Top up UC PUBG cepat dan resmi. Masukkan Player ID, pilih nominal, dan selesaikan pembayaran.",
         image: pubg
     },
-    "cod": {
+    "call-of-duty-mobile": {
         name: "Call of Duty",
-        slug: "cod",
+        slug: "call-of-duty-mobile",
         description: "Top up COD cepat dan resmi. Masukkan Player ID, pilih nominal, dan selesaikan pembayaran.",
         image: cod
     },
@@ -73,15 +74,15 @@ export default function GameDetailPage({params}: {params: {slug:string}}) {
     if(!game) return NotFound()
 
         const bannerSrc =
-        game.image || '/placeholder.svg?height=540&width=1200&query=banner%20game%20${encodeURIComponent(game.name)}'
+        game.image || `/placeholder.svg?height=540&width=1200&query=banner%20game%20${encodeURIComponent(game.name)}`
 
         return(
-            <div className="min-h-screen bg-background">
-                <Header/>
-                <Navigation/>
-
+        <div className="min-h-screen bg-background">
+            <Header/>
+            <Navigation/>
+            <main className="container mx-auto px-4 py-8 md:py-10">
                 <section className="grid gap-6 md:gap-8 md:grid-cols-12">
-                    <div className="md-cols-span-7">
+                    <div className="md:col-span-full">
                         <div className="bg-card border border-border rounded-lg overflow-hidden">
                             <div className="relative w-full aspect-[16/9]">
                                 <Image 
@@ -94,9 +95,9 @@ export default function GameDetailPage({params}: {params: {slug:string}}) {
                                 />
                             </div>
                             <div className="p-4 md:p-6">
-                                <h1 className="text-2xl md:text-3xl text-semibold text-balance">{game.name}</h1>
+                                <h1 className="text-2xl md:text-3xl font-semibold text-balance">{game.name}</h1>
                                 <p className="mt-2 text-muted-foreground text-pretty">{game.description}</p>
-                                <div className="mt-4 flex felx-col sm:flex-row gap-3">
+                                <div className="mt-4 flex flex-col sm:flex-row gap-3">
                                     <Button asChild className="w-full sm:w-auto">
                                         <Link href="#topup-form">Topup Sekarang</Link>
                                     </Button>
@@ -106,8 +107,7 @@ export default function GameDetailPage({params}: {params: {slug:string}}) {
                                 </div>
                             </div>
                         </div>
-
-                        <div id="topup-form" className="md-col-span-5">
+                        <div id="topup-form" className="md:col-span-full">
                             <div className="bg-card border border-border rounded-lg p-4 md:p-6">
                                 <h2 className="text-xl font-semibold">Form Topup</h2>
                                 <p className="text-muted-foreground text-sm mt-1">Pastikan data akun {game.name} Anda benar.</p>
@@ -117,8 +117,11 @@ export default function GameDetailPage({params}: {params: {slug:string}}) {
                             </div>
                         </div>
                     </div>
+                  
                 </section>
-            </div>
+            </main>
+            <Footer />     
+        </div>    
         )
     }
     
