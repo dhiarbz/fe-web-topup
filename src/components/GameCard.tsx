@@ -1,10 +1,19 @@
-"use client";
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
 
 type ImageSource = string | StaticImageData;
+
+function slugify(input: string){
+    return input
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g,"")
+    .trim()
+    .replace(/\s+/g,"-")
+}
+
+
 
 interface GameCardProps {
     title: string;
@@ -46,7 +55,9 @@ const GameCard = ({ title, image, category, discount, href = "#" }: GameCardProp
     // Jika ada href, wrap dengan Link, jika tidak gunakan div
     if (href !== "#") {
         return (
-            <Link href={href} className="block">
+            <Link 
+            href={`/${slugify(title)}`} 
+            className="block" aria-label={`Top Up ${title}`}>
                 {cardContent}
             </Link>
         );
